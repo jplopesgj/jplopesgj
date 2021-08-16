@@ -1,13 +1,17 @@
 <?php
+    
+error_reporting(E_ALL);
+ini_set("display_errors", 1);
+
 
 use Backend\GitHub;
 
 require_once  __DIR__ . '/backend/config.php';
 require_once  __DIR__ . '/backend/GitHub.php';
 
-$api = new GitHub(API_KEY);
-$city = $api->getCity('santos');
-//var_dump($api)."</pre>";
+$api = new GitHub();
+$city = $api->getUrl();
+//dd($api)."</pre>";
 dd($city);
 
 ?>
@@ -22,7 +26,7 @@ dd($city);
     <title>Document</title>
 </head>
 <body>
-<H3>Cidade <?php echo $city ?></H3>
+<H3>Cidade</H3>
 <p></p>
 </body>
 
